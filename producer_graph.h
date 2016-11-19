@@ -1,3 +1,5 @@
+// Copyright 2016 Dino Wernli. All Rights Reserved. See LICENSE for licensing terms.
+
 #ifndef PRODUCER_GRAPH_H_
 #define PRODUCER_GRAPH_H_
 

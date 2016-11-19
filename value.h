@@ -1,3 +1,5 @@
+// Copyright 2016 Dino Wernli. All Rights Reserved. See LICENSE for licensing terms.
+
 #ifndef VALUE_H_
 #define VALUE_H_
 

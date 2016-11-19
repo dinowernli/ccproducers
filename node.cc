@@ -1,3 +1,5 @@
+// Copyright 2016 Dino Wernli. All Rights Reserved. See LICENSE for licensing terms.
+
 #include "node.h"
 
 #include <assert.h>

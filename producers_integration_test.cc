@@ -1,3 +1,5 @@
+// Copyright 2016 Dino Wernli. All Rights Reserved. See LICENSE for licensing terms.
+
 #include <chrono>
 #include <cstdio>
 #include <functional>

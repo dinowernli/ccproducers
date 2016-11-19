@@ -1,3 +1,5 @@
+// Copyright 2016 Dino Wernli. All Rights Reserved. See LICENSE for licensing terms.
+
 #ifndef OUTPUT_H_
 #define OUTPUT_H_
 
