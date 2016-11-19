@@ -1,5 +1,11 @@
 sudo: required
 
+language: cpp
+
+compiler:
+  - clang
+  - gcc
+
 jdk:
   - oraclejdk8
 
