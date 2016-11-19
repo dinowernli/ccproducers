@@ -40,14 +40,14 @@ class ProducerGraph {
   // Runs all the registered producers required to produce the supplied output.
   template<typename T>
   std::future<const T&> Execute(NodeHandle<T>* node_handle) {
-    Node<T>* node = static_cast<Node<T>*>(nodes_by_id_[node_handle->NodeId()]); 
+    Node<T>* node = static_cast<Node<T>*>(nodes_by_id_[node_handle->NodeId()]);
     std::set<NodeBase*> allNodes = node->TransitiveDeps();
     for (NodeBase* node : allNodes) {
       node->Start();
     }
     return node->ResultFuture();
   }
- 
+
   // Adds a producer to the graph with no arguments.
   template<typename ReturnType>
   NodeHandle<ReturnType>* AddProducer(std::function<Output<ReturnType>()> f) {
@@ -124,7 +124,7 @@ class ProducerGraph {
   // std::function-based implementation above.
   template<typename ReturnType, typename... Params>
   NodeHandle<ReturnType>* AddProducer(
-      std::string name, 
+      std::string name,
       Output<ReturnType> (*f)(Input<Params>...),
       NodeHandle<Params>*... nodes) {
     std::function<Output<ReturnType>(Input<Params>...)> function(f);
@@ -181,7 +181,7 @@ class ProducerGraph {
     int node_id = node_handle->NodeId();
 
     // Bind the result of the first output handle and call recursively.
-    std::function<Output<ReturnType>(Input<Tail>...)> h = 
+    std::function<Output<ReturnType>(Input<Tail>...)> h =
         [f, node_id, nodes_by_id](Input<Tail>... tail) {
           Node<P>* node = static_cast<Node<P>*>(nodes_by_id->at(node_id));
           return f(node->GetOutput()->AsInput(), tail...);

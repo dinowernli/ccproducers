@@ -44,11 +44,11 @@ class NodeHandle : public NodeHandleBase {
 // of their exact type parameters.
 class NodeBase {
  public:
-  NodeBase(int id, std::string name, std::set<NodeBase*> deps); 
+  NodeBase(int id, std::string name, std::set<NodeBase*> deps);
 
   const std::string& name() const { return name_; }
 
-  void Run(); 
+  void Run();
   bool IsDone() const;
   void SetFinished();
   void AddReverseDep(NodeBase* rdep);
@@ -61,7 +61,7 @@ class NodeBase {
   // Eventually, this node's result promise will be fulfilled.
   void Start();
 
-  // Returns the transitive set of nodes which need to run in order for this 
+  // Returns the transitive set of nodes which need to run in order for this
   // node to have produced a result. In particular, the returned set contains
   // this node.
   std::set<NodeBase*> TransitiveDeps();
@@ -148,13 +148,13 @@ class Node : public NodeBase {
         result_promise_.set_value(result_->get());
       }
     } catch (std::exception&) {
-      std::cout << DebugPrefix() 
+      std::cout << DebugPrefix()
                 << "Recovering from exception, setting failed" << std::endl;
       result_promise_.set_exception(std::current_exception());
     }
 
     std::cout << DebugPrefix() << "Running producer finished" << std::endl;
-  } 
+  }
 
  private:
   // This points to nullptr until RunProducer() is called.

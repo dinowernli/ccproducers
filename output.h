@@ -16,14 +16,14 @@ class OutputBase {
 template<class T>
 class Output : public OutputBase {
  public:
-  Output(T&& content) 
-      : value_(std::make_unique<Value<T>>(std::move(content))), 
+  Output(T&& content)
+      : value_(std::make_unique<Value<T>>(std::move(content))),
         error_(nullptr) {}
-  Output(Error&& error) 
-      : value_(nullptr), 
+  Output(Error&& error)
+      : value_(nullptr),
         error_(std::make_unique<Error>(std::move(error))) {}
-  Output(Output<T>&& other) 
-      : value_(std::move(other.value_)), 
+  Output(Output<T>&& other)
+      : value_(std::move(other.value_)),
         error_(std::move(other.error_)) {}
   ~Output() {}
 
@@ -36,7 +36,7 @@ class Output : public OutputBase {
   bool IsError() const {
     return error_.get() != nullptr;
   }
- 
+
   bool IsValue() const {
     return value_.get() != nullptr;
   }

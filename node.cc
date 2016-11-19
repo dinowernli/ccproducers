@@ -95,7 +95,7 @@ void NodeBase::ReportFinished(NodeBase* node) {
 
 std::string NodeBase::DebugPrefix() const {
   std::stringstream stream;
-  stream << "[" 
+  stream << "["
     << "node=" << name() << ", "
     << "state=" << DebugState() << ", "
     << "deps=" << deps_.size() << ", "

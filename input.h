@@ -26,7 +26,7 @@ class Input {
   bool IsError() const {
     return error_ != nullptr;
   }
- 
+
   bool IsValue() const {
     return value_ != nullptr;
   }

@@ -85,7 +85,7 @@ TEST(ProducerGraphTest, BasicGraph) {
 
   auto result_future = graph.Execute(message);
   result_future.wait();
-  
+
   EXPECT_EQ("Hello world, number: 17", result_future.get());
 }
 
@@ -97,7 +97,7 @@ TEST(ProducerGraphTest, GraphWithMixedTypes) {
 
   auto result_future = graph.Execute(h);
   result_future.wait();
-  
+
   EXPECT_EQ(100, result_future.get()[0]);
 }
 
