@@ -1,0 +1,4 @@
+Next steps:
+- Add support for returning futures
+- Add support for non-input params (bound at registration time)
+- Add proper logging
