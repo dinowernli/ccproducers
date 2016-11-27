@@ -10,7 +10,6 @@ cc_toolchain_suite(
     toolchains = {
         "local|compiler": ":cc-compiler-local",
         "k8|clang38": "cc-compiler-local",
-        "k8|clang35": "cc-compiler-local",
     },
 )
 

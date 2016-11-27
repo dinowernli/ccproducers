@@ -1,4 +1,4 @@
-COMMON_COPTS = ["--std=c++1y", "-std=c++1y"]
+COMMON_COPTS = ["--std=c++1y"]
 
 cc_library(
     name = "error",
