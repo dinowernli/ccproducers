@@ -1,24 +1,26 @@
+dist: precise
+
 sudo: required
-
-language: cpp
-
-compiler:
-  - clang
-  - gcc
 
 jdk:
   - oraclejdk8
 
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.8
     packages:
       - wget
+      - gcc-5
+      - g++-5
+      - clang-3.8
+      - clang++-3.8
 
 before_install:
-  - wget 'https://github.com/bazelbuild/bazel/releases/download/0.2.2b/bazel_0.2.2b-linux-x86_64.deb'
-  - sha256sum -c tools/bazel_0.2.2b-linux-x86_64.deb.sha256
-  - chmod +x bazel_0.2.2b-linux-x86_64.deb
-  - sudo dpkg -i bazel_0.2.2b-linux-x86_64.deb
+  - wget 'https://github.com/bazelbuild/bazel/releases/download/0.4.0/bazel_0.4.0-linux-x86_64.deb'
+  - chmod +x bazel_0.4.0-linux-x86_64.deb
+  - sudo dpkg -i bazel_0.4.0-linux-x86_64.deb
 
 script:
   - bazel test ...

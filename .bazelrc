@@ -1,0 +1,2 @@
+build --crosstool_top=//tools/cpp:default-toolchain --compiler=clang38
+test --crosstool_top=//tools/cpp:default-toolchain --compiler=clang38
